@@ -1,0 +1,19 @@
+
+.home{
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+    height: 800px;
+    background-image: url("../dogImg.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: scroll;
+
+    .dogBreeds{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background-color: transparent;
+    }
+}

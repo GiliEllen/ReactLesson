@@ -1,0 +1,17 @@
+.main {
+  margin: 0%;
+  width: 100%;
+  height: 100%;
+}
+.main nav {
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  color: whitesmoke;
+  background-color: rgb(170, 74, 23);
+  border-bottom: 2px double rgb(121, 49, 10);
+}
+.main nav h1 {
+  align-content: center;
+}/*# sourceMappingURL=main.css.map */
