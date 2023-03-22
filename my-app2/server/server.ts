@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
-const cors = require(`cors`);
+// const cors = require(`cors`);
 
 dotenv.config();
 
@@ -26,7 +26,7 @@ mongoose
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+// app.use(cors());
 
 import usersRoutes from "./API/userRoutes";
 app.use("/api/users", usersRoutes);

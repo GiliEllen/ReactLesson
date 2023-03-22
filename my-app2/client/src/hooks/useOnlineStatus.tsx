@@ -1,36 +1,25 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export async function useOnlineStatus() {
-  const [isOnline, setIsOnline] = useState(false);
-
-  const handleOnline = () => {
-    setIsOnline(true);
-  };
-  const handleOfline = () => {
-    setIsOnline(false);
-    
-  };
-      
-  const checkConnection = async () => {
-    try {
-      const { data } = await axios.get(
-        "http://localhost:5555/api/users/get-user-by-cookie"
-      );
-      if (data.userDB) {
-        handleOnline();
-      } else {
-        handleOfline();
-      }
-    } catch (err: any) {
-      if (!isOnline) handleOfline();
-    }
-  };
+export const useOnlineStatus = () => {
+  const [userLoggedIn, setUserLoggedIn] = useState<boolean>();
 
   useEffect(() => {
-
-    checkConnection()
+    console.log("this is from useOnlineStatus");
+    getUserFromCookie();
   }, []);
 
-  return { isOnline, handleOnline, handleOfline };
-}
+  const getUserFromCookie = async () => {
+    try {
+      const { data } = await axios.get("/api/users/get-user-by-cookie");
+      if (data.userDB) {
+        setUserLoggedIn(true);
+      } else {
+        setUserLoggedIn(false);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  return [userLoggedIn];
+};

@@ -9,10 +9,10 @@ interface SearchProps{
 
 const Search: FC <SearchProps> = ({ setInputValue }) => {
 
-  const onLine = useOnlineStatus();
-  let disp = "";
-  if (onLine) disp = "none";
-  else disp = "block";
+  // // const onLine = useOnlineStatus();
+  // let disp = "";
+  // // if (onLine) disp = "none";
+  // else disp = "block";
 
   const handleSearch = (ev:any) => {
 
@@ -23,7 +23,7 @@ const Search: FC <SearchProps> = ({ setInputValue }) => {
     <input onInput={handleSearch} 
     id={"search"} type={"text"} 
     placeholder={`Enter breed`}
-    style={{ textDecoration: "none", display: disp}} />
+    style={{ textDecoration: "none"}} />
   )
 }
 
